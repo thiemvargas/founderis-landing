@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+  background: 
+    conic-gradient(from 0deg at 50% 50%, #000000 0deg, #0f0f0f 60deg, #000000 120deg, #0a0a0a 180deg, #000000 240deg, #0f0f0f 300deg, #000000 360deg),
+    radial-gradient(ellipse 1200px 800px at 50% -100%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
+    radial-gradient(ellipse 800px 600px at 100% 50%, rgba(255, 255, 255, 0.015) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 0% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, #000000 0%, #080808 25%, #000000 50%, #0c0c0c 75%, #000000 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated grid background */
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.08) 41px,
+      rgba(255,255,255,0.08) 42px,
+      transparent 43px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.08) 41px,
+      rgba(255,255,255,0.08) 42px,
+      transparent 43px
+    );
+  animation: grid-drift 40s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes grid-drift {
+  0% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    filter: blur(0px);
+  }
+  25% { 
+    transform: translate(10px, -5px) rotate(1deg) scale(1.02);
+    filter: blur(0.5px);
+  }
+  50% { 
+    transform: translate(-5px, 10px) rotate(0deg) scale(0.98);
+    filter: blur(0px);
+  }
+  75% { 
+    transform: translate(-10px, -8px) rotate(-1deg) scale(1.01);
+    filter: blur(0.3px);
+  }
+  100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Floating orbs */
+.floating-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+.orb-1 {
+  width: 800px;
+  height: 600px;
+  background: 
+    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 40%, transparent 70%),
+    radial-gradient(ellipse at 70% 70%, rgba(255,255,255,0.05) 0%, transparent 60%);
+  top: 10%;
+  left: 20%;
+  animation: float-complex 25s ease-in-out infinite;
+  animation-delay: 0s;
+  z-index: 1;
+}
+
+.orb-2 {
+  width: 900px;
+  height: 700px;
+  background: 
+    radial-gradient(ellipse at 60% 40%, rgba(212,212,212,0.06) 0%, rgba(255,255,255,0.025) 50%, transparent 80%),
+    radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 60%);
+  top: 50%;
+  right: 15%;
+  animation: float-complex 35s ease-in-out infinite reverse;
+  animation-delay: 3s;
+  z-index: 1;
+}
+
+.orb-3 {
+  width: 600px;
+  height: 450px;
+  background: 
+    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 40%, transparent 70%);
+  bottom: 10%;
+  left: 40%;
+  animation: float-complex 30s ease-in-out infinite;
+  animation-delay: 6s;
+  z-index: 1;
+}
+
+.orb-4 {
+  width: 700px;
+  height: 400px;
+  background: 
+    radial-gradient(ellipse at 40% 60%, rgba(255,255,255,0.04) 0%, transparent 80%);
+  top: 80%;
+  left: 10%;
+  animation: float-complex 45s ease-in-out infinite reverse;
+  animation-delay: 9s;
+  z-index: 1;
+}
+
+.orb-5 {
+  width: 500px;
+  height: 700px;
+  background: 
+    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 50%, transparent 75%);
+  top: 20%;
+  right: 30%;
+  animation: float-complex 20s ease-in-out infinite;
+  animation-delay: 12s;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-5px); }
+}
+
+@keyframes float-complex {
+  0% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  20% { 
+    transform: translateY(-30px) translateX(15px) rotate(2deg) scale(1.05);
+    opacity: 0.8;
+  }
+  40% { 
+    transform: translateY(-10px) translateX(-20px) rotate(-1deg) scale(0.95);
+    opacity: 1;
+  }
+  60% { 
+    transform: translateY(25px) translateX(10px) rotate(1.5deg) scale(1.02);
+    opacity: 0.9;
+  }
+  80% { 
+    transform: translateY(-15px) translateX(-5px) rotate(-0.5deg) scale(0.98);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shiny text effect for "Is" */
+.shiny-text {
+  background: linear-gradient(
+    110deg,
+    #71717a 0%,
+    #f4f4f5 20%,
+    #ffffff 30%,
+    #f8fafc 40%,
+    #ffffff 50%,
+    #f4f4f5 60%,
+    #e4e4e7 70%,
+    #71717a 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  position: relative;
+}
+
+
+/* Metallic text for animated words */
+.metallic-text {
+  background: linear-gradient(
+    145deg,
+    #3f3f46 0%,
+    #52525b 20%,
+    #71717a 35%,
+    #a1a1aa 45%,
+    #d4d4d8 50%,
+    #a1a1aa 55%,
+    #71717a 65%,
+    #52525b 80%,
+    #3f3f46 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes shine {
+  0% {
+    background-position: -300% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 300% 0;
+  }
+}
+
