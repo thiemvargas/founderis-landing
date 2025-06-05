@@ -10,7 +10,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
-    { name: t('nav.features'), href: '#features' },
+    { name: t('nav.features'), href: '/#features' },
     { name: t('nav.pricing'), href: '/pricing' },
     { name: t('nav.about'), href: '/about' },
     { name: t('nav.contact'), href: '/contact' }
@@ -34,17 +34,22 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              item.href.startsWith('#') ? (
-                <button
+              item.href.startsWith('/#') ? (
+                <Link
                   key={item.name}
-                  onClick={() => {
-                    const element = document.querySelector(item.href)
-                    element?.scrollIntoView({ behavior: 'smooth' })
-                  }}
+                  href={item.href}
                   className="text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
+                  onClick={(e) => {
+                    // If we're already on the home page, prevent navigation and scroll instead
+                    if (window.location.pathname === '/') {
+                      e.preventDefault()
+                      const element = document.querySelector(item.href.substring(1))
+                      element?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
                 >
                   {item.name}
-                </button>
+                </Link>
               ) : (
                 <Link
                   key={item.name}
@@ -58,11 +63,10 @@ export default function Header() {
             
             {/* CTA Button */}
             <motion.button
-              className="bg-white text-black px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-100"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white/20 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 opacity-60 cursor-not-allowed border border-white/30"
+              disabled
             >
-              {t('hero.button.start')}
+              Coming Soon
             </motion.button>
           </div>
 
@@ -93,18 +97,23 @@ export default function Header() {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 bg-black/40 backdrop-blur-lg rounded-lg mt-2 border border-white/10">
             {navigation.map((item) => (
-              item.href.startsWith('#') ? (
-                <button
+              item.href.startsWith('/#') ? (
+                <Link
                   key={item.name}
-                  onClick={() => {
-                    const element = document.querySelector(item.href)
-                    element?.scrollIntoView({ behavior: 'smooth' })
+                  href={item.href}
+                  className="block px-3 py-2 text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
+                  onClick={(e) => {
+                    // If we're already on the home page, prevent navigation and scroll instead
+                    if (window.location.pathname === '/') {
+                      e.preventDefault()
+                      const element = document.querySelector(item.href.substring(1))
+                      element?.scrollIntoView({ behavior: 'smooth' })
+                    }
                     setIsMenuOpen(false)
                   }}
-                  className="block w-full text-left px-3 py-2 text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
                 >
                   {item.name}
-                </button>
+                </Link>
               ) : (
                 <Link
                   key={item.name}
@@ -118,10 +127,10 @@ export default function Header() {
             ))}
             <div className="px-3 py-2">
               <motion.button
-                className="w-full bg-white text-black px-4 py-2 rounded-lg font-semibold transition-all duration-300"
-                whileTap={{ scale: 0.95 }}
+                className="w-full bg-white/20 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 opacity-60 cursor-not-allowed border border-white/30"
+                disabled
               >
-                {t('hero.button.start')}
+                Coming Soon
               </motion.button>
             </div>
           </div>

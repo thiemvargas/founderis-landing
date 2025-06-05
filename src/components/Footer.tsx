@@ -39,17 +39,10 @@ export default function Footer() {
           
           <div className="flex justify-center items-center px-2">
             <motion.button
-              className="group relative overflow-hidden bg-white text-black px-10 sm:px-16 py-4 sm:py-6 font-semibold rounded-lg transition-all duration-300 text-lg sm:text-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="group relative overflow-hidden bg-white/20 text-white px-10 sm:px-16 py-4 sm:py-6 font-semibold rounded-lg transition-all duration-300 text-lg sm:text-xl opacity-60 cursor-not-allowed border border-white/30"
+              disabled
             >
-              <span className="relative z-10">{t('footer.button.start')}</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-white to-gray-200"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
+              <span className="relative z-10">Coming Soon</span>
             </motion.button>
           </div>
         </motion.div>

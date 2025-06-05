@@ -210,21 +210,14 @@ export default function HowItWorksSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.button
-            className="group relative overflow-hidden bg-white text-black px-6 sm:px-10 py-3 sm:py-5 font-semibold rounded-lg transition-all duration-300 text-base sm:text-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="group relative overflow-hidden bg-white/20 text-white px-6 sm:px-10 py-3 sm:py-5 font-semibold rounded-lg transition-all duration-300 text-base sm:text-lg opacity-60 cursor-not-allowed border border-white/30"
+            disabled
           >
-            <span className="relative z-10">{t('howworks.button')}</span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-white to-gray-200"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: 0 }}
-              transition={{ duration: 0.3 }}
-            />
+            <span className="relative z-10">Coming Soon</span>
           </motion.button>
           
           <p className="text-white/50 text-xs sm:text-sm mt-3 sm:mt-4">
-            {t('howworks.subtitle')}
+            Join our waitlist to be first to try FounderIs
           </p>
         </motion.div>
       </div>

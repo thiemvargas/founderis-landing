@@ -99,7 +99,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            We're finalizing our pricing structure to give you the best value. Here's what we're planning:
+            We&apos;re finalizing our pricing structure to give you the best value. Here&apos;s what we&apos;re planning:
           </motion.p>
         </div>
       </section>
