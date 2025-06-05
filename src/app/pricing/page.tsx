@@ -82,13 +82,24 @@ export default function PricingPage() {
             <span className="gradient-text block mt-2">{t('pricing.title.highlight')}</span>
           </motion.h1>
 
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <span className="inline-block px-4 py-2 rounded-full border border-orange-400/30 text-sm font-medium bg-orange-500/10 backdrop-blur-sm text-orange-300">
+              💰 Pricing Plans Coming Soon
+            </span>
+          </motion.div>
+
           <motion.p
             className="text-xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {t('pricing.description')}
+            We're finalizing our pricing structure to give you the best value. Here's what we're planning:
           </motion.p>
         </div>
       </section>
@@ -153,15 +164,14 @@ export default function PricingPage() {
                 </ul>
 
                 <motion.button
-                  className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 opacity-60 cursor-not-allowed ${
                     plan.popular
-                      ? 'bg-white text-black hover:bg-gray-100'
-                      : 'border border-blue-400/30 text-white hover:bg-blue-500/10'
+                      ? 'bg-white text-black'
+                      : 'border border-blue-400/30 text-white'
                   }`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled
                 >
-                  {t(plan.buttonKey)}
+                  Coming Soon
                 </motion.button>
               </motion.div>
             ))}

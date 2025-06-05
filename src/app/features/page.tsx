@@ -74,13 +74,24 @@ export default function FeaturesPage() {
             <span className="gradient-text block mt-2">{t('features.title.highlight')}</span>
           </motion.h1>
 
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <span className="inline-block px-4 py-2 rounded-full border border-yellow-400/30 text-sm font-medium bg-yellow-500/10 backdrop-blur-sm text-yellow-300">
+              🚧 In Development - Coming Soon
+            </span>
+          </motion.div>
+
           <motion.p
             className="text-xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {t('features.description')}
+            {t('features.description')} We're building these powerful features to help you succeed.
           </motion.p>
         </div>
       </section>
@@ -99,6 +110,11 @@ export default function FeaturesPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
+                <div className="absolute top-4 right-4">
+                  <span className="px-2 py-1 text-xs bg-yellow-500/20 text-yellow-300 rounded-full border border-yellow-400/30">
+                    Soon
+                  </span>
+                </div>
                 <div className="text-4xl mb-6">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   {t(feature.titleKey)}

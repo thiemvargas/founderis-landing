@@ -9,22 +9,10 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Alex Rodriguez',
-      role: 'about.team.ceo.role',
-      bio: 'about.team.ceo.bio',
+      name: 'Juan Pablo Vargas',
+      role: 'Founder & CEO',
+      bio: 'Serial entrepreneur and AI enthusiast building the future of startup support. Passionate about democratizing access to world-class entrepreneurial guidance.',
       image: '👨‍💼'
-    },
-    {
-      name: 'Sarah Chen',
-      role: 'about.team.cto.role',
-      bio: 'about.team.cto.bio',
-      image: '👩‍💻'
-    },
-    {
-      name: 'Marcus Johnson',
-      role: 'about.team.lead.role',
-      bio: 'about.team.lead.bio',
-      image: '👨‍🔬'
     }
   ]
 
@@ -207,7 +195,8 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex justify-center">
+            <div className="max-w-sm">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -223,13 +212,14 @@ export default function AboutPage() {
                   {member.name}
                 </h3>
                 <p className="text-blue-400 mb-4 font-medium">
-                  {t(member.role)}
+                  {member.role}
                 </p>
                 <p className="text-white/70 leading-relaxed">
-                  {t(member.bio)}
+                  {member.bio}
                 </p>
               </motion.div>
             ))}
+            </div>
           </div>
         </div>
       </section>
