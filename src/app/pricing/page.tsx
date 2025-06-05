@@ -1,14 +1,3 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Pricing - Simple Plans for Every Founder',
-  description: 'Choose the perfect FounderIs plan for your startup journey. Start free with basic AI features, upgrade to Pro for unlimited access, or get Enterprise for teams.',
-  openGraph: {
-    title: 'Pricing - Simple Plans for Every Founder | FounderIs',
-    description: 'Transparent pricing for AI-powered startup support. Free plan available, Pro at $49/month, Enterprise custom pricing.',
-  },
-}
-
 'use client'
 
 import { motion } from 'framer-motion'

@@ -1,14 +1,3 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Features - AI-Powered Startup Tools',
-  description: 'Discover FounderIs\' comprehensive AI features: strategic planning, market validation, business analytics, emotional support, and founder networking tools.',
-  openGraph: {
-    title: 'Features - AI-Powered Startup Tools | FounderIs',
-    description: 'Discover comprehensive AI features designed for startup success: strategic planning, market validation, analytics, and 24/7 founder support.',
-  },
-}
-
 'use client'
 
 import { motion } from 'framer-motion'
