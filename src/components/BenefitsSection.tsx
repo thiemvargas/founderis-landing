@@ -66,6 +66,11 @@ function BenefitCard({ titleKey, descriptionKey, index, gradient }: BenefitCardP
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ scale: 1.02, y: -5 }}
     >
+      <div className="absolute top-4 right-4">
+        <span className="px-2 py-1 text-xs bg-yellow-500/20 text-yellow-300 rounded-full border border-yellow-400/30">
+          Soon
+        </span>
+      </div>
       <div className={`w-12 h-12 rounded-lg ${gradient} mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
         {getIcon(titleKey)}
       </div>
@@ -146,6 +151,18 @@ export default function BenefitsSection() {
             </span>
           </motion.div>
           
+          <motion.div
+            className="mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <span className="inline-block px-4 py-2 rounded-full border border-yellow-400/30 text-sm font-medium bg-yellow-500/10 backdrop-blur-sm text-yellow-300">
+              🚧 Features in Development
+            </span>
+          </motion.div>
+          
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white leading-tight">
             {t('benefits.title')}
             <span className="gradient-text block mt-1 sm:mt-2">{t('benefits.title.highlight')}</span>
@@ -176,17 +193,10 @@ export default function BenefitsSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <motion.button
-            className="group relative overflow-hidden bg-white text-black px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="group relative overflow-hidden bg-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg transition-all duration-300 opacity-60 cursor-not-allowed border border-white/30"
+            disabled
           >
-            <span className="relative z-10">{t('benefits.button')}</span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-white to-gray-200"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: 0 }}
-              transition={{ duration: 0.3 }}
-            />
+            <span className="relative z-10">Coming Soon</span>
           </motion.button>
         </motion.div>
       </div>
