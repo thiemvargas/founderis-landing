@@ -322,7 +322,7 @@ const translations = {
     'hero.description': 'Tu compañero inteligente potenciado por IA que te guía desde',
     'hero.description.highlight': ' la chispa inicial hasta el éxito del mercado',
     'hero.description.end': ' — ofreciendo insights estratégicos, marcos de validación y apoyo emocional en cada paso del camino.',
-    'hero.button.start': 'Comienza gratis',
+    'hero.button.start': 'Comenzar gratis',
     'hero.stats.features': 'Funciones IA',
     'hero.stats.success': 'Tasa de Éxito',
     'hero.stats.support': 'Soporte Estratégico',
@@ -344,7 +344,7 @@ const translations = {
     'benefits.execution.description': 'Asistencia en comunicación, insights de productividad e identificación de cuellos de botella para maximizar tu eficiencia e impacto.',
     'benefits.emotional.title': 'Ancla Emocional',
     'benefits.emotional.description': 'Espacio de apoyo confidencial 24/7 que ofrece motivación, manejo del estrés y construcción de resistencia para el viaje del fundador.',
-    'benefits.button': 'Experimenta el Poder',
+    'benefits.button': 'Comenzar ahora',
 
     // How It Works Section
     'howworks.badge': 'Cómo Funciona',
@@ -369,7 +369,7 @@ const translations = {
     'howworks.step3.detail2': 'Coaching de productividad y enfoque',
     'howworks.step3.detail3': 'Técnicas de manejo del estrés',
     'howworks.step3.detail4': 'Refuerzo motivacional',
-    'howworks.button': 'Comienza tu Viaje',
+    'howworks.button': 'Comenzar ahora',
     'howworks.subtitle': 'Únete a fundadores solitarios que ya no viajan solos',
 
     // Footer Section
@@ -377,7 +377,7 @@ const translations = {
     'footer.title': '¿Listo para transformar tu',
     'footer.title.highlight': 'viaje como fundador?',
     'footer.description': 'Únete a fundadores solitarios que ya no navegan la incertidumbre solos. Obtén el socio de pensamiento estratégico, marco de validación y apoyo emocional que necesitas para tener éxito.',
-    'footer.button.start': 'Comienza a Construir Hoy',
+    'footer.button.start': 'Comenzar ahora',
     'footer.brand.description': 'Tu socio de pensamiento potenciado por IA proporcionando guía estratégica, marcos de validación y apoyo emocional para fundadores solitarios.',
     'footer.platform': 'Plataforma',
     'footer.company': 'Empresa',

@@ -50,7 +50,7 @@ export const spanishTranslations = {
   'pricing.starter.feature2': 'Acceso a la comunidad',
   'pricing.starter.feature3': 'Soporte por email',
   'pricing.starter.feature4': '5 pruebas de validación por mes',
-  'pricing.starter.button': 'Comenzar Gratis',
+  'pricing.starter.button': 'Empezar gratis',
   'pricing.pro.name': 'Profesional',
   'pricing.pro.price': '$49/mes',
   'pricing.pro.description': 'Para emprendedores serios',
