@@ -34,35 +34,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center gap-4">
-            <span className="inline-block px-3 py-2 rounded-full border border-blue-400/20 text-xs sm:text-sm font-medium bg-blue-950/20 backdrop-blur-sm">
-              {t('hero.badge')}
-            </span>
-            
-            {/* Language Toggle */}
-            <div className="flex bg-white/5 rounded-lg p-1 backdrop-blur-sm border border-white/10">
-              <button
-                onClick={() => setLanguage('es')}
-                className={`px-3 py-1 text-xs font-medium rounded transition-all duration-300 ${
-                  language === 'es' 
-                    ? 'bg-blue-500 text-white' 
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                ES
-              </button>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1 text-xs font-medium rounded transition-all duration-300 ${
-                  language === 'en' 
-                    ? 'bg-blue-500 text-white' 
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                EN
-              </button>
-            </div>
-          </div>
+          <span className="inline-block px-3 py-2 rounded-full border border-blue-400/20 text-xs sm:text-sm font-medium bg-blue-950/20 backdrop-blur-sm">
+            {t('hero.badge')}
+          </span>
         </motion.div>
 
         <motion.h1 
