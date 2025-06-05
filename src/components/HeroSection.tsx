@@ -68,9 +68,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Your intelligent copilot for creating, validating, and launching 
-          <span className="text-white font-medium"> game-changing startups </span>
-          with the power of artificial intelligence.
+          Your AI-powered thinking partner that guides you from 
+          <span className="text-white font-medium"> initial spark to market success</span>
+          — offering strategic insights, validation frameworks, and emotional support every step of the way.
         </motion.p>
 
         <motion.div 
@@ -117,9 +117,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           {[
-            { number: "10K+", label: "Startups Launched" },
-            { number: "95%", label: "Success Rate" },
-            { number: "24/7", label: "AI Assistance" }
+            { number: "10K+", label: "Ideas Refined" },
+            { number: "85%", label: "Market Validation Rate" },
+            { number: "24/7", label: "Strategic Support" }
           ].map((stat, index) => (
             <motion.div
               key={index}

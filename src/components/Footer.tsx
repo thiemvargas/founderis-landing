@@ -4,21 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function Footer() {
   return (
-    <footer className="relative py-24 px-6 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-950 to-gray-900"></div>
-      
-      {/* Background pattern */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-full opacity-5"
-        style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, white 2px, transparent 2px), 
-                           radial-gradient(circle at 75% 75%, white 2px, transparent 2px)`,
-          backgroundSize: '60px 60px'
-        }}
-        animate={{ x: [0, 30, 0], y: [0, 30, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      />
+    <footer className="relative py-24 px-6 overflow-hidden bg-transparent">
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main CTA */}
@@ -42,12 +28,12 @@ export default function Footer() {
           </motion.div>
 
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
-            Your startup journey
-            <span className="gradient-text block mt-2">begins now</span>
+            Ready to transform your
+            <span className="gradient-text block mt-2">founder journey?</span>
           </h2>
           <p className="text-xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of entrepreneurs who are already building the future with FounderIs. 
-            Your next breakthrough is just one conversation away.
+            Join solo founders who no longer navigate uncertainty alone. Get the strategic thinking partner, 
+            validation framework, and emotional support you need to succeed.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -56,7 +42,7 @@ export default function Footer() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">Launch Your Startup</span>
+              <span className="relative z-10">Start Your Journey</span>
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-white to-gray-200"
                 initial={{ x: "-100%" }}
@@ -95,7 +81,7 @@ export default function Footer() {
             >
               <h3 className="text-3xl font-bold text-white mb-4 gradient-text">FounderIs</h3>
               <p className="text-white/60 text-lg leading-relaxed max-w-md">
-                Your intelligent copilot for building, validating, and scaling game-changing startups with the power of AI.
+                Your AI-powered thinking partner providing strategic guidance, validation frameworks, and emotional support for solo founders.
               </p>
             </motion.div>
 

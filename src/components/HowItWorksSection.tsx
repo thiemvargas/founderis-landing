@@ -85,48 +85,41 @@ export default function HowItWorksSection() {
   const steps = [
     {
       number: '01',
-      title: 'Concept Discovery',
-      description: 'Share your entrepreneurial vision and let our AI analyze its market potential, competitive landscape, and scalability factors.',
+      title: 'Thinking Partnership',
+      description: 'Engage in interactive brainstorming sessions to clarify your vision, refine your value proposition, and develop strategic plans.',
       details: [
-        'AI-powered market analysis',
-        'Competitive intelligence gathering',
-        'Feasibility assessment',
-        'Risk evaluation'
+        'Interactive idea refinement',
+        'Value proposition development',
+        'Strategic planning assistance',
+        'Communication and pitch support'
       ]
     },
     {
       number: '02',
-      title: 'Strategic Refinement',
-      description: 'Receive intelligent insights and strategic recommendations to optimize your business model and value proposition.',
+      title: 'Validation Framework',
+      description: 'Design and execute market validation experiments with AI-guided research to prove product-market fit.',
       details: [
-        'Business model optimization',
-        'Value proposition refinement',
-        'Target market identification',
-        'Revenue stream design'
+        'Hypothesis testing design',
+        'Market research guidance',
+        'Customer feedback analysis',
+        'Demand assessment tools'
       ]
     },
     {
       number: '03',
-      title: 'Launch Execution',
-      description: 'Execute your go-to-market strategy with precision-guided roadmaps, milestone tracking, and continuous optimization.',
+      title: 'Continuous Support',
+      description: 'Access ongoing emotional support, productivity optimization, and strategic guidance throughout your founder journey.',
       details: [
-        'Go-to-market strategy',
-        'Milestone tracking',
-        'Performance optimization',
-        'Scale planning'
+        'Confidential emotional support',
+        'Productivity and focus coaching',
+        'Stress management techniques',
+        'Motivational reinforcement'
       ]
     }
   ]
 
   return (
-    <section className="py-32 px-6 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black"></div>
-      <motion.div
-        className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      />
+    <section className="py-32 px-6 relative overflow-hidden bg-transparent">
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -149,12 +142,12 @@ export default function HowItWorksSection() {
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
-            From idea to
-            <span className="gradient-text block mt-2">market leader</span>
+            Your journey from
+            <span className="gradient-text block mt-2">spark to success</span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Three intelligent phases that transform your entrepreneurial vision 
-            into a thriving, scalable business.
+            Three core pillars of support that provide comprehensive guidance, 
+            validation insights, and emotional resilience for solo founders.
           </p>
         </motion.div>
 
@@ -194,7 +187,7 @@ export default function HowItWorksSection() {
           </motion.button>
           
           <p className="text-white/50 text-sm mt-4">
-            Join 10,000+ entrepreneurs building the future
+            Join solo founders who no longer journey alone
           </p>
         </motion.div>
       </div>

@@ -43,41 +43,39 @@ function BenefitCard({ title, description, index, gradient }: BenefitCardProps) 
 export default function BenefitsSection() {
   const benefits = [
     {
-      title: 'AI-Powered Analytics',
-      description: 'Advanced algorithms analyze market trends, competitor landscapes, and opportunity gaps to guide your strategic decisions.',
+      title: 'Vision Partner',
+      description: 'Interactive brainstorming sessions that help refine your ideas, explore untapped opportunities, and crystallize your core value proposition.',
       gradient: 'bg-gradient-to-br from-white/20 to-white/10'
     },
     {
-      title: 'Rapid Validation',
-      description: 'Test and validate your business concepts in days, not months, with our intelligent validation framework.',
+      title: 'Market Compass',
+      description: 'Guided validation frameworks and hypothesis testing to ensure product-market fit before you invest time and resources.',
       gradient: 'bg-gradient-to-br from-gray-400/20 to-gray-500/10'
     },
     {
-      title: 'Smart Launch Strategy',
-      description: 'Orchestrate your go-to-market strategy with precision-guided recommendations and real-time adjustments.',
+      title: 'Strategic Planner',
+      description: 'Structured business planning, financial projections, and actionable roadmaps that keep you focused on what matters most.',
       gradient: 'bg-gradient-to-br from-white/25 to-gray-300/15'
     },
     {
-      title: 'Market Intelligence',
-      description: 'Deep dive into industry dynamics, consumer behavior patterns, and emerging opportunities in your sector.',
+      title: 'Decision Lab',
+      description: 'Scenario simulations and pre-mortem analysis that help you anticipate challenges and make informed strategic choices.',
       gradient: 'bg-gradient-to-br from-gray-200/20 to-white/10'
     },
     {
-      title: 'Ideation Engine',
-      description: 'Amplify your creative potential with AI-generated insights and innovative solution pathways.',
+      title: 'Execution Optimizer',
+      description: 'Communication assistance, productivity insights, and bottleneck identification to maximize your efficiency and impact.',
       gradient: 'bg-gradient-to-br from-white/15 to-gray-400/10'
     },
     {
-      title: 'Precision Planning',
-      description: 'Data-driven roadmaps and milestone tracking ensure your startup stays on the optimal growth trajectory.',
+      title: 'Emotional Anchor',
+      description: '24/7 confidential support space offering motivation, stress management, and resilience building for the founder journey.',
       gradient: 'bg-gradient-to-br from-gray-300/20 to-white/15'
     }
   ]
 
   return (
-    <section className="py-32 px-6 relative">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
+    <section className="py-32 px-6 relative bg-transparent">
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -100,12 +98,12 @@ export default function BenefitsSection() {
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
-            Everything you need to
-            <span className="gradient-text block mt-2">build the future</span>
+            Your complete startup
+            <span className="gradient-text block mt-2">support ecosystem</span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            FounderIs combines cutting-edge artificial intelligence with proven entrepreneurial methodologies 
-            to accelerate your journey from concept to scale.
+            From initial brainstorming to market validation, strategic planning to emotional resilience — 
+            FounderIs provides the comprehensive guidance solo founders need to succeed.
           </p>
         </motion.div>
 
