@@ -17,28 +17,28 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-transparent">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-transparent">
 
-      <div className="max-w-5xl mx-auto text-center relative z-20">
+      <div className="max-w-5xl mx-auto text-center relative z-20 px-2">
         <motion.div
-          className="mb-6"
+          className="mb-4 sm:mb-6"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-2 rounded-full border border-white/20 text-sm font-medium bg-white/5 backdrop-blur-sm">
+          <span className="inline-block px-3 py-2 rounded-full border border-blue-400/20 text-xs sm:text-sm font-medium bg-blue-950/20 backdrop-blur-sm">
             AI-Powered Startup Intelligence
           </span>
         </motion.div>
 
         <motion.h1 
-          className="text-6xl md:text-8xl font-bold mb-8 leading-tight"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <span className="gradient-text">Founder<span className="text-gray-400">Is</span></span>{' '}
-          <span className="block md:inline relative inline-block" style={{ perspective: "1000px" }}>
+          <span className="block sm:inline relative inline-block" style={{ perspective: "1000px" }}>
             <motion.span
               key={currentWordIndex}
               initial={{ rotateY: -90, opacity: 0 }}
@@ -63,7 +63,7 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p 
-          className="text-xl md:text-2xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-light px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -74,13 +74,13 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.div 
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.button
-            className="group relative overflow-hidden bg-white text-black px-8 py-4 font-semibold rounded-lg min-w-[200px] transition-all duration-300"
+            className="group relative overflow-hidden bg-white text-black px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg w-full sm:w-auto sm:min-w-[200px] transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -94,8 +94,8 @@ export default function HeroSection() {
           </motion.button>
           
           <motion.button
-            className="group border border-white/30 text-white px-8 py-4 font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 min-w-[200px] backdrop-blur-sm"
-            whileHover={{ scale: 1.05, borderColor: "rgba(255,255,255,0.5)" }}
+            className="group border border-blue-400/30 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg hover:bg-blue-500/10 transition-all duration-300 w-full sm:w-auto sm:min-w-[200px] backdrop-blur-sm"
+            whileHover={{ scale: 1.05, borderColor: "rgba(96, 165, 250, 0.5)" }}
             whileTap={{ scale: 0.95 }}
           >
             Watch Demo
@@ -111,7 +111,7 @@ export default function HeroSection() {
 
         {/* Stats */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto px-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -126,8 +126,8 @@ export default function HeroSection() {
               className="text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
-              <div className="text-sm text-white/60">{stat.label}</div>
+              <div className="text-xl sm:text-2xl font-bold text-white mb-1">{stat.number}</div>
+              <div className="text-xs sm:text-sm text-white/60">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

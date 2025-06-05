@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 
 export default function Footer() {
   return (
-    <footer className="relative py-24 px-6 overflow-hidden bg-transparent">
+    <footer className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-transparent">
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main CTA */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -22,23 +22,23 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="px-4 py-2 rounded-full border border-white/20 text-sm font-medium bg-white/5 backdrop-blur-sm">
+            <span className="px-3 py-2 rounded-full border border-blue-400/20 text-xs sm:text-sm font-medium bg-blue-950/20 backdrop-blur-sm">
               Ready to Transform?
             </span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white leading-tight">
             Ready to transform your
-            <span className="gradient-text block mt-2">founder journey?</span>
+            <span className="gradient-text block mt-1 sm:mt-2">founder journey?</span>
           </h2>
-          <p className="text-xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
             Join solo founders who no longer navigate uncertainty alone. Get the strategic thinking partner, 
             validation framework, and emotional support you need to succeed.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2">
             <motion.button
-              className="group relative overflow-hidden bg-white text-black px-10 py-5 font-semibold rounded-lg transition-all duration-300 text-lg min-w-[220px]"
+              className="group relative overflow-hidden bg-white text-black px-6 sm:px-10 py-3 sm:py-5 font-semibold rounded-lg transition-all duration-300 text-base sm:text-lg w-full sm:w-auto sm:min-w-[220px]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -52,8 +52,8 @@ export default function Footer() {
             </motion.button>
             
             <motion.button
-              className="group border border-white/30 text-white px-10 py-5 font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm text-lg min-w-[220px]"
-              whileHover={{ scale: 1.05, borderColor: "rgba(255,255,255,0.5)" }}
+              className="group border border-blue-400/30 text-white px-6 sm:px-10 py-3 sm:py-5 font-semibold rounded-lg hover:bg-blue-500/10 transition-all duration-300 backdrop-blur-sm text-base sm:text-lg w-full sm:w-auto sm:min-w-[220px]"
+              whileHover={{ scale: 1.05, borderColor: "rgba(96, 165, 250, 0.5)" }}
               whileTap={{ scale: 0.95 }}
             >
               Schedule a Demo
@@ -69,8 +69,8 @@ export default function Footer() {
         </motion.div>
 
         {/* Footer content */}
-        <div className="border-t border-white/10 pt-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="border-t border-white/10 pt-12 sm:pt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
             {/* Brand */}
             <motion.div
               className="md:col-span-2"
@@ -79,8 +79,8 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-3xl font-bold text-white mb-4 gradient-text">FounderIs</h3>
-              <p className="text-white/60 text-lg leading-relaxed max-w-md">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 gradient-text">FounderIs</h3>
+              <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
                 Your AI-powered thinking partner providing strategic guidance, validation frameworks, and emotional support for solo founders.
               </p>
             </motion.div>
@@ -92,13 +92,13 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="font-semibold text-white mb-4">Platform</h4>
-              <ul className="space-y-3">
+              <h4 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">Platform</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {['Features', 'Pricing', 'Success Stories', 'Documentation'].map((item, index) => (
                   <li key={index}>
                     <a 
                       href="#" 
-                      className="text-white/60 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
+                      className="text-white/60 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block text-sm sm:text-base"
                     >
                       {item}
                     </a>
@@ -114,13 +114,13 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="font-semibold text-white mb-4">Company</h4>
-              <ul className="space-y-3">
+              <h4 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {['About Us', 'Careers', 'Contact', 'Privacy'].map((item, index) => (
                   <li key={index}>
                     <a 
                       href="#" 
-                      className="text-white/60 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
+                      className="text-white/60 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block text-sm sm:text-base"
                     >
                       {item}
                     </a>
@@ -131,7 +131,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom section */}
-          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
+          <div className="flex flex-col md:flex-row justify-between items-center pt-6 sm:pt-8 border-t border-white/5">
             <motion.div
               className="mb-6 md:mb-0"
               initial={{ opacity: 0 }}
@@ -139,13 +139,13 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <p className="text-white/50 text-sm">
+              <p className="text-white/50 text-xs sm:text-sm">
                 © 2024 FounderIs. All rights reserved.
               </p>
             </motion.div>
 
             <motion.div
-              className="flex space-x-6"
+              className="flex space-x-4 sm:space-x-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -159,12 +159,12 @@ export default function Footer() {
                 <motion.a
                   key={social.name}
                   href="#"
-                  className="w-12 h-12 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg flex items-center justify-center transition-all duration-300 group"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.name}
                 >
-                  <svg className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/70 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                     <path d={social.icon} />
                   </svg>
                 </motion.a>

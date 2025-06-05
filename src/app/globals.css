@@ -11,11 +11,11 @@ html {
 body {
   font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
   background: 
-    conic-gradient(from 0deg at 50% 50%, #000000 0deg, #0f0f0f 60deg, #000000 120deg, #0a0a0a 180deg, #000000 240deg, #0f0f0f 300deg, #000000 360deg),
-    radial-gradient(ellipse 1200px 800px at 50% -100%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
-    radial-gradient(ellipse 800px 600px at 100% 50%, rgba(255, 255, 255, 0.015) 0%, transparent 60%),
-    radial-gradient(ellipse 600px 400px at 0% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-    linear-gradient(135deg, #000000 0%, #080808 25%, #000000 50%, #0c0c0c 75%, #000000 100%);
+    conic-gradient(from 0deg at 50% 50%, #000000 0deg, #0F172A 60deg, #000000 120deg, #111827 180deg, #000000 240deg, #0F172A 300deg, #000000 360deg),
+    radial-gradient(ellipse 1200px 800px at 50% -100%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse 800px 600px at 100% 50%, rgba(96, 165, 250, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 0% 100%, rgba(147, 197, 253, 0.06) 0%, transparent 50%),
+    linear-gradient(135deg, #000000 0%, #111827 25%, #000000 50%, #0F172A 75%, #000000 100%);
   color: #ffffff;
   min-height: 100vh;
   position: relative;
@@ -29,26 +29,64 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.02;
+  opacity: 0.015;
   background-image: 
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 40px,
-      rgba(255,255,255,0.08) 41px,
-      rgba(255,255,255,0.08) 42px,
+      rgba(59, 130, 246, 0.12) 41px,
+      rgba(59, 130, 246, 0.12) 42px,
       transparent 43px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 40px,
-      rgba(255,255,255,0.08) 41px,
-      rgba(255,255,255,0.08) 42px,
+      rgba(96, 165, 250, 0.08) 41px,
+      rgba(96, 165, 250, 0.08) 42px,
       transparent 43px
     );
   animation: grid-drift 40s ease-in-out infinite;
   z-index: 1;
+}
+
+/* Reduce effects on mobile for better performance */
+@media (max-width: 768px) {
+  .grid-background {
+    opacity: 0.008;
+  }
+  
+  /* Reduce orb sizes and effects on mobile */
+  .orb-1, .orb-2, .orb-3, .orb-4, .orb-5 {
+    filter: blur(20px);
+    animation-duration: 60s;
+  }
+  
+  .orb-1 {
+    width: 600px;
+    height: 450px;
+  }
+  
+  .orb-2 {
+    width: 700px;
+    height: 525px;
+  }
+  
+  .orb-3 {
+    width: 450px;
+    height: 340px;
+  }
+  
+  .orb-4 {
+    width: 525px;
+    height: 300px;
+  }
+  
+  .orb-5 {
+    width: 375px;
+    height: 525px;
+  }
 }
 
 @keyframes grid-drift {
@@ -87,8 +125,8 @@ body {
   width: 800px;
   height: 600px;
   background: 
-    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 40%, transparent 70%),
-    radial-gradient(ellipse at 70% 70%, rgba(255,255,255,0.05) 0%, transparent 60%);
+    radial-gradient(ellipse at 30% 30%, rgba(59, 130, 246, 0.12) 0%, rgba(96, 165, 250, 0.05) 40%, transparent 70%),
+    radial-gradient(ellipse at 70% 70%, rgba(147, 197, 253, 0.08) 0%, transparent 60%);
   top: 10%;
   left: 20%;
   animation: float-complex 25s ease-in-out infinite;
@@ -100,8 +138,8 @@ body {
   width: 900px;
   height: 700px;
   background: 
-    radial-gradient(ellipse at 60% 40%, rgba(212,212,212,0.06) 0%, rgba(255,255,255,0.025) 50%, transparent 80%),
-    radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 60%);
+    radial-gradient(ellipse at 60% 40%, rgba(30, 58, 138, 0.08) 0%, rgba(59, 130, 246, 0.04) 50%, transparent 80%),
+    radial-gradient(ellipse at 20% 80%, rgba(96, 165, 250, 0.06) 0%, transparent 60%);
   top: 50%;
   right: 15%;
   animation: float-complex 35s ease-in-out infinite reverse;
@@ -113,7 +151,7 @@ body {
   width: 600px;
   height: 450px;
   background: 
-    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 40%, transparent 70%);
+    radial-gradient(ellipse at 50% 50%, rgba(147, 197, 253, 0.07) 0%, rgba(59, 130, 246, 0.03) 40%, transparent 70%);
   bottom: 10%;
   left: 40%;
   animation: float-complex 30s ease-in-out infinite;
@@ -125,7 +163,7 @@ body {
   width: 700px;
   height: 400px;
   background: 
-    radial-gradient(ellipse at 40% 60%, rgba(255,255,255,0.04) 0%, transparent 80%);
+    radial-gradient(ellipse at 40% 60%, rgba(37, 99, 235, 0.06) 0%, transparent 80%);
   top: 80%;
   left: 10%;
   animation: float-complex 45s ease-in-out infinite reverse;
@@ -137,7 +175,7 @@ body {
   width: 500px;
   height: 700px;
   background: 
-    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 50%, transparent 75%);
+    radial-gradient(ellipse at 80% 20%, rgba(96, 165, 250, 0.05) 0%, rgba(147, 197, 253, 0.025) 50%, transparent 75%);
   top: 20%;
   right: 30%;
   animation: float-complex 20s ease-in-out infinite;
@@ -190,21 +228,21 @@ body {
 .shiny-text {
   background: linear-gradient(
     110deg,
-    #71717a 0%,
-    #f4f4f5 20%,
-    #ffffff 30%,
-    #f8fafc 40%,
-    #ffffff 50%,
-    #f4f4f5 60%,
-    #e4e4e7 70%,
-    #71717a 100%
+    #64748B 0%,
+    #93C5FD 20%,
+    #DBEAFE 30%,
+    #ffffff 40%,
+    #DBEAFE 50%,
+    #93C5FD 60%,
+    #60A5FA 70%,
+    #64748B 100%
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: shine 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
   position: relative;
 }
 
@@ -213,20 +251,20 @@ body {
 .metallic-text {
   background: linear-gradient(
     145deg,
-    #3f3f46 0%,
-    #52525b 20%,
-    #71717a 35%,
-    #a1a1aa 45%,
-    #d4d4d8 50%,
-    #a1a1aa 55%,
-    #71717a 65%,
-    #52525b 80%,
-    #3f3f46 100%
+    #0F172A 0%,
+    #1E3A8A 20%,
+    #2563EB 35%,
+    #60A5FA 45%,
+    #93C5FD 50%,
+    #60A5FA 55%,
+    #2563EB 65%,
+    #1E3A8A 80%,
+    #0F172A 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(30, 58, 138, 0.3));
 }
 
 @keyframes shine {
