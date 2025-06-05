@@ -25,9 +25,9 @@ export default function HeroSection() {
   }, [words.length])
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-transparent pt-16">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-transparent pt-16" style={{zIndex: 10}}>
 
-      <div className="max-w-5xl mx-auto text-center relative z-20 px-2">
+      <div className="max-w-5xl mx-auto text-center relative z-30 px-2">
         <motion.div
           className="mb-4 sm:mb-6"
           initial={{ opacity: 0, scale: 0.5 }}

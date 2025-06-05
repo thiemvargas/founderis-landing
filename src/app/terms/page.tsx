@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../../contexts/LanguageContext'
 import Header from '../../components/Header'
-import LanguageToggle from '../../components/LanguageToggle'
 
 export default function TermsPage() {
   const { t } = useLanguage()
@@ -54,7 +53,6 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen pt-16">
       <Header />
-      <LanguageToggle />
       
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 relative overflow-hidden bg-transparent">

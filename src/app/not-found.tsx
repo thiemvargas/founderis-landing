@@ -12,7 +12,6 @@ export default function NotFound() {
   return (
     <main className="min-h-screen pt-16">
       <Header />
-      <LanguageToggle />
       
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-transparent">
         <div className="max-w-3xl mx-auto text-center relative z-20">

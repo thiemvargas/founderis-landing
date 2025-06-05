@@ -8,7 +8,7 @@ export default function LanguageToggle() {
 
   return (
     <motion.div
-      className="fixed top-6 right-6 z-50"
+      className="fixed top-6 right-6 z-40"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 1 }}
