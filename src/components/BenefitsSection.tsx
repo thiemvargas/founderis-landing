@@ -129,7 +129,7 @@ export default function BenefitsSection() {
   ]
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative bg-transparent">
+    <section id="features" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative bg-transparent">
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div

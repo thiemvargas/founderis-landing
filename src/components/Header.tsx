@@ -10,7 +10,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
-    { name: t('nav.features'), href: '/features' },
+    { name: t('nav.features'), href: '#features' },
     { name: t('nav.pricing'), href: '/pricing' },
     { name: t('nav.about'), href: '/about' },
     { name: t('nav.contact'), href: '/contact' }
@@ -34,13 +34,26 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
-              >
-                {item.name}
-              </Link>
+              item.href.startsWith('#') ? (
+                <button
+                  key={item.name}
+                  onClick={() => {
+                    const element = document.querySelector(item.href)
+                    element?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
             
             {/* CTA Button */}
@@ -80,14 +93,28 @@ export default function Header() {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 bg-black/40 backdrop-blur-lg rounded-lg mt-2 border border-white/10">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
+              item.href.startsWith('#') ? (
+                <button
+                  key={item.name}
+                  onClick={() => {
+                    const element = document.querySelector(item.href)
+                    element?.scrollIntoView({ behavior: 'smooth' })
+                    setIsMenuOpen(false)
+                  }}
+                  className="block w-full text-left px-3 py-2 text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-3 py-2 text-white/70 hover:text-white transition-colors duration-300 text-sm font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
             <div className="px-3 py-2">
               <motion.button
