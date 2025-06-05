@@ -82,13 +82,13 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 px-2"
+          className="flex justify-center items-center mb-12 sm:mb-16 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.button
-            className="group relative overflow-hidden bg-white text-black px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg w-full sm:w-auto sm:min-w-[200px] transition-all duration-300"
+            className="group relative overflow-hidden bg-white text-black px-8 sm:px-12 py-4 sm:py-5 font-semibold rounded-lg transition-all duration-300 text-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -99,21 +99,6 @@ export default function HeroSection() {
               whileHover={{ x: 0 }}
               transition={{ duration: 0.3 }}
             />
-          </motion.button>
-          
-          <motion.button
-            className="group border border-blue-400/30 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg hover:bg-blue-500/10 transition-all duration-300 w-full sm:w-auto sm:min-w-[200px] backdrop-blur-sm"
-            whileHover={{ scale: 1.05, borderColor: "rgba(96, 165, 250, 0.5)" }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {t('hero.button.demo')}
-            <motion.span
-              className="inline-block ml-2"
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              →
-            </motion.span>
           </motion.button>
         </motion.div>
 
