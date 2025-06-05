@@ -1,8 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLanguage()
   return (
     <footer className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-transparent">
 
@@ -23,17 +25,16 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <span className="px-3 py-2 rounded-full border border-blue-400/20 text-xs sm:text-sm font-medium bg-blue-950/20 backdrop-blur-sm">
-              Ready to Transform?
+              {t('footer.badge')}
             </span>
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white leading-tight">
-            Ready to transform your
-            <span className="gradient-text block mt-1 sm:mt-2">founder journey?</span>
+            {t('footer.title')}
+            <span className="gradient-text block mt-1 sm:mt-2">{t('footer.title.highlight')}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/70 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
-            Join solo founders who no longer navigate uncertainty alone. Get the strategic thinking partner, 
-            validation framework, and emotional support you need to succeed.
+            {t('footer.description')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2">
@@ -42,7 +43,7 @@ export default function Footer() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">Start Your Journey</span>
+              <span className="relative z-10">{t('footer.button.start')}</span>
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-white to-gray-200"
                 initial={{ x: "-100%" }}
@@ -56,7 +57,7 @@ export default function Footer() {
               whileHover={{ scale: 1.05, borderColor: "rgba(96, 165, 250, 0.5)" }}
               whileTap={{ scale: 0.95 }}
             >
-              Schedule a Demo
+              {t('footer.button.demo')}
               <motion.span
                 className="inline-block ml-2"
                 animate={{ x: [0, 5, 0] }}
@@ -81,7 +82,7 @@ export default function Footer() {
             >
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 gradient-text">FounderIs</h3>
               <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
-                Your AI-powered thinking partner providing strategic guidance, validation frameworks, and emotional support for solo founders.
+                {t('footer.brand.description')}
               </p>
             </motion.div>
 
@@ -92,9 +93,9 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">Platform</h4>
+              <h4 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">{t('footer.platform')}</h4>
               <ul className="space-y-2 sm:space-y-3">
-                {['Features', 'Pricing', 'Success Stories', 'Documentation'].map((item, index) => (
+                {[t('footer.features'), t('footer.pricing'), t('footer.stories'), t('footer.documentation')].map((item, index) => (
                   <li key={index}>
                     <a 
                       href="#" 
@@ -114,9 +115,9 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+              <h4 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">{t('footer.company')}</h4>
               <ul className="space-y-2 sm:space-y-3">
-                {['About Us', 'Careers', 'Contact', 'Privacy'].map((item, index) => (
+                {[t('footer.about'), t('footer.careers'), t('footer.contact'), t('footer.privacy')].map((item, index) => (
                   <li key={index}>
                     <a 
                       href="#" 
@@ -140,7 +141,7 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <p className="text-white/50 text-xs sm:text-sm">
-                © 2024 FounderIs. All rights reserved.
+                {t('footer.copyright')}
               </p>
             </motion.div>
 

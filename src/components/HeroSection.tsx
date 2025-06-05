@@ -2,11 +2,19 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-
-const words = ['Innovate', 'Create', 'Validate', 'Launch', 'Scale']
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function HeroSection() {
+  const { language, setLanguage, t } = useLanguage()
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  
+  const words = [
+    t('hero.words.innovate'),
+    t('hero.words.create'),
+    t('hero.words.validate'),
+    t('hero.words.launch'),
+    t('hero.words.scale')
+  ]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,9 +34,35 @@ export default function HeroSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-3 py-2 rounded-full border border-blue-400/20 text-xs sm:text-sm font-medium bg-blue-950/20 backdrop-blur-sm">
-            AI-Powered Startup Intelligence
-          </span>
+          <div className="flex items-center gap-4">
+            <span className="inline-block px-3 py-2 rounded-full border border-blue-400/20 text-xs sm:text-sm font-medium bg-blue-950/20 backdrop-blur-sm">
+              {t('hero.badge')}
+            </span>
+            
+            {/* Language Toggle */}
+            <div className="flex bg-white/5 rounded-lg p-1 backdrop-blur-sm border border-white/10">
+              <button
+                onClick={() => setLanguage('es')}
+                className={`px-3 py-1 text-xs font-medium rounded transition-all duration-300 ${
+                  language === 'es' 
+                    ? 'bg-blue-500 text-white' 
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                ES
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-3 py-1 text-xs font-medium rounded transition-all duration-300 ${
+                  language === 'en' 
+                    ? 'bg-blue-500 text-white' 
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+          </div>
         </motion.div>
 
         <motion.h1 
@@ -37,7 +71,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="gradient-text">Founder<span className="text-gray-400">Is</span></span>{' '}
+          <span className="gradient-text">{t('hero.title.part1')}<span className="text-gray-400">{t('hero.title.part2')}</span></span>{' '}
           <span className="block sm:inline relative inline-block" style={{ perspective: "1000px" }}>
             <motion.span
               key={currentWordIndex}
@@ -68,9 +102,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Your AI-powered thinking partner that guides you from 
-          <span className="text-white font-medium"> initial spark to market success</span>
-          — offering strategic insights, validation frameworks, and emotional support every step of the way.
+          {t('hero.description')}
+          <span className="text-white font-medium">{t('hero.description.highlight')}</span>
+          {t('hero.description.end')}
         </motion.p>
 
         <motion.div 
@@ -84,7 +118,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10">Start Building</span>
+            <span className="relative z-10">{t('hero.button.start')}</span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-white to-gray-200"
               initial={{ x: "-100%" }}
@@ -98,7 +132,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.05, borderColor: "rgba(96, 165, 250, 0.5)" }}
             whileTap={{ scale: 0.95 }}
           >
-            Watch Demo
+            {t('hero.button.demo')}
             <motion.span
               className="inline-block ml-2"
               animate={{ x: [0, 5, 0] }}
@@ -117,9 +151,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           {[
-            { number: "10K+", label: "Ideas Refined" },
-            { number: "85%", label: "Market Validation Rate" },
-            { number: "24/7", label: "Strategic Support" }
+            { number: "50+", label: t('hero.stats.features') },
+            { number: "93%", label: t('hero.stats.success') },
+            { number: "24/7", label: t('hero.stats.support') }
           ].map((stat, index) => (
             <motion.div
               key={index}

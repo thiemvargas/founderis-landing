@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { LanguageProvider } from '../contexts/LanguageContext'
 
 export const metadata: Metadata = {
   title: 'FounderIs - Your AI Startup Copilot',
@@ -20,7 +21,9 @@ export default function RootLayout({
         <div className="floating-orb orb-3"></div>
         <div className="floating-orb orb-4"></div>
         <div className="floating-orb orb-5"></div>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )

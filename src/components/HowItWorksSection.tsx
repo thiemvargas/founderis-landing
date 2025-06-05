@@ -1,16 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
 interface StepProps {
   number: string
-  title: string
-  description: string
-  details: string[]
+  titleKey: string
+  descriptionKey: string
+  detailKeys: string[]
   index: number
 }
 
-function Step({ number, title, description, details, index }: StepProps) {
+function Step({ number, titleKey, descriptionKey, detailKeys, index }: StepProps) {
+  const { t } = useLanguage()
   return (
     <motion.div
       className="relative h-full"
@@ -82,15 +84,15 @@ function Step({ number, title, description, details, index }: StepProps) {
 
         <div className="text-center flex-grow flex flex-col">
           <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white group-hover:text-white transition-colors">
-            {title}
+            {t(titleKey)}
           </h3>
           <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-4 sm:mb-6 group-hover:text-white/80 transition-colors flex-grow">
-            {description}
+            {t(descriptionKey)}
           </p>
           
           {/* Feature details */}
           <ul className="space-y-3 mt-auto">
-            {details.map((detail, detailIndex) => (
+            {detailKeys.map((detailKey, detailIndex) => (
               <motion.li
                 key={detailIndex}
                 className="flex items-start text-sm text-white/60 group-hover:text-white/70 transition-colors"
@@ -100,7 +102,7 @@ function Step({ number, title, description, details, index }: StepProps) {
                 transition={{ delay: index * 0.2 + detailIndex * 0.1 + 0.5 }}
               >
                 <div className="w-1.5 h-1.5 bg-blue-400/40 rounded-full mr-3 mt-1.5 group-hover:bg-blue-300/60 transition-colors flex-shrink-0"></div>
-                <span>{detail}</span>
+                <span>{t(detailKey)}</span>
               </motion.li>
             ))}
           </ul>
@@ -116,38 +118,40 @@ function Step({ number, title, description, details, index }: StepProps) {
 }
 
 export default function HowItWorksSection() {
+  const { t } = useLanguage()
+  
   const steps = [
     {
       number: '01',
-      title: 'Thinking Partnership',
-      description: 'Engage in interactive brainstorming sessions to clarify your vision, refine your value proposition, and develop strategic plans.',
-      details: [
-        'Interactive idea refinement',
-        'Value proposition development',
-        'Strategic planning assistance',
-        'Communication and pitch support'
+      titleKey: 'howworks.step1.title',
+      descriptionKey: 'howworks.step1.description',
+      detailKeys: [
+        'howworks.step1.detail1',
+        'howworks.step1.detail2',
+        'howworks.step1.detail3',
+        'howworks.step1.detail4'
       ]
     },
     {
       number: '02',
-      title: 'Validation Framework',
-      description: 'Design and execute market validation experiments with AI-guided research to prove product-market fit.',
-      details: [
-        'Hypothesis testing design',
-        'Market research guidance',
-        'Customer feedback analysis',
-        'Demand assessment tools'
+      titleKey: 'howworks.step2.title',
+      descriptionKey: 'howworks.step2.description',
+      detailKeys: [
+        'howworks.step2.detail1',
+        'howworks.step2.detail2',
+        'howworks.step2.detail3',
+        'howworks.step2.detail4'
       ]
     },
     {
       number: '03',
-      title: 'Continuous Support',
-      description: 'Access ongoing emotional support, productivity optimization, and strategic guidance throughout your founder journey.',
-      details: [
-        'Confidential emotional support',
-        'Productivity and focus coaching',
-        'Stress management techniques',
-        'Motivational reinforcement'
+      titleKey: 'howworks.step3.title',
+      descriptionKey: 'howworks.step3.description',
+      detailKeys: [
+        'howworks.step3.detail1',
+        'howworks.step3.detail2',
+        'howworks.step3.detail3',
+        'howworks.step3.detail4'
       ]
     }
   ]
@@ -171,17 +175,16 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="px-4 py-2 rounded-full border border-white/20 text-sm font-medium bg-white/5 backdrop-blur-sm">
-              How It Works
+              {t('howworks.badge')}
             </span>
           </motion.div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white leading-tight">
-            Your journey from
-            <span className="gradient-text block mt-1 sm:mt-2">spark to success</span>
+            {t('howworks.title')}
+            <span className="gradient-text block mt-1 sm:mt-2">{t('howworks.title.highlight')}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2">
-            Three core pillars of support that provide comprehensive guidance, 
-            validation insights, and emotional resilience for solo founders.
+            {t('howworks.description')}
           </p>
         </motion.div>
 
@@ -190,9 +193,9 @@ export default function HowItWorksSection() {
             <Step
               key={index}
               number={step.number}
-              title={step.title}
-              description={step.description}
-              details={step.details}
+              titleKey={step.titleKey}
+              descriptionKey={step.descriptionKey}
+              detailKeys={step.detailKeys}
               index={index}
             />
           ))}
@@ -211,7 +214,7 @@ export default function HowItWorksSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10">Start Your Journey</span>
+            <span className="relative z-10">{t('howworks.button')}</span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-white to-gray-200"
               initial={{ x: "-100%" }}
@@ -221,7 +224,7 @@ export default function HowItWorksSection() {
           </motion.button>
           
           <p className="text-white/50 text-xs sm:text-sm mt-3 sm:mt-4">
-            Join solo founders who no longer journey alone
+            {t('howworks.subtitle')}
           </p>
         </motion.div>
       </div>
