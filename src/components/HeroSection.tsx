@@ -22,10 +22,10 @@ export default function HeroSection() {
     }, 2000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [words.length])
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-transparent">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-transparent pt-16">
 
       <div className="max-w-5xl mx-auto text-center relative z-20 px-2">
         <motion.div
