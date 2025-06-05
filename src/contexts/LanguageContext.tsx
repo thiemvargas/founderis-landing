@@ -1,6 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, ReactNode } from 'react'
+import { spanishTranslations } from './SpanishTranslations'
 
 type Language = 'en' | 'es'
 
@@ -391,7 +392,7 @@ const translations = {
     'footer.privacy': 'Privacidad',
     
     // Import all Spanish translations from separate file
-    ...require('./SpanishTranslations').spanishTranslations
+    ...spanishTranslations
   }
 }
 
